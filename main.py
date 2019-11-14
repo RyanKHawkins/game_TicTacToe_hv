@@ -29,6 +29,10 @@ def computer_move():
     pass
 
 
+def space_free():
+    pass
+
+
 def random_move():
     pass
 
