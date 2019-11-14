@@ -30,6 +30,9 @@ def play_game():
     current_player = "X"
     waiting_player = "O"
 
+    if game_won(board):
+        pass
+
     current_player, waiting_player = waiting_player, current_player
 
 
@@ -49,23 +52,29 @@ def space_free(space):
     return space not in ["X", "O"]
 
 
-def random_computer_move():
-    pass
+def random_computer_move(possible_moves):
+    return random.choice(possible_moves)
 
 
 def smart_computer_move():
     pass
 
 
-def game_won():
+def game_won(board, player):
+    if horizontal_win(board, player):
+        return True
+    if vertical_win(board, player):
+        return True
+    if diagonal_win(board, player):
+        return True
+    return False
+
+
+def horizontal_win(board, player):
     pass
 
 
-def horizontal_win():
-    pass
-
-
-def vertical_win(player):
+def vertical_win(board, player):
     for column in range(3):
         if board[column] == board[column + 3] == board[column + 6] == player:
             return True
@@ -83,8 +92,8 @@ def board_full(board):
     return True
 
 
-def game_tie():
-    pass
+def game_tie(board):
+    return board_full(board)
 
 
 # temporary testers
