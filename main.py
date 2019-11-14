@@ -74,8 +74,11 @@ def diagonal_win():
     pass
 
 
-def board_full():
-    pass
+def board_full(board):
+    for position in board:
+        if position not in ["X", "O"]:
+            return False
+    return True
 
 
 def game_tie():
