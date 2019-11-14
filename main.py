@@ -24,11 +24,12 @@ def display_board(board):
     print(" " + " | ".join(board[3:6]))
     print("--- " * 3)
     print(" " + " | ".join(board[6:9]))
+    print()
 
 
 def play_game():
-    pass
-
+    num_players = input("How many players? (0 - 2):  ")
+    
 
 def player_move(player):
     pass
