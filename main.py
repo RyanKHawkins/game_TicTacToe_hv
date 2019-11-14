@@ -92,3 +92,7 @@ def switch_players():
 # temporary testers
 board = create_board()
 display_board(board)
+if board_full(board):
+    print("Board is full.")
+if not board_full(board):
+    print("Board is not full.")
