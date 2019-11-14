@@ -9,9 +9,6 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-EMPTY = "   "
-
-
 def create_board():
     board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     return board
@@ -29,6 +26,11 @@ def display_board(board):
 
 def play_game():
     num_players = input("How many players? (0 - 2):  ")
+
+    current_player = "X"
+    waiting_player = "O"
+
+    current_player, waiting_player = waiting_player, current_player
 
 
 def player_move(player):
@@ -82,10 +84,6 @@ def board_full(board):
 
 
 def game_tie():
-    pass
-
-
-def switch_players():
     pass
 
 
