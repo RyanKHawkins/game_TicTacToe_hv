@@ -3,6 +3,7 @@
 
 import random
 import os
+import time
 
 
 def clear():
