@@ -9,12 +9,21 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+EMPTY = "   "
+
+
 def create_board():
-    pass
+    board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    return board
 
 
-def display_board():
-    pass
+def display_board(board):
+    print()
+    print(" " + " | ".join(board[0:3]))
+    print("--- " * 3)
+    print(" " + " | ".join(board[3:6]))
+    print("--- " * 3)
+    print(" " + " | ".join(board[6:9]))
 
 
 def play_game():
@@ -29,8 +38,8 @@ def computer_move():
     pass
 
 
-def space_free():
-    pass
+def space_free(space):
+    return space not in ["X", "O"]
 
 
 def random_move():
@@ -67,3 +76,8 @@ def game_tie():
 
 def switch_players():
     pass
+
+
+# temporary testers
+board = create_board()
+display_board(board)
