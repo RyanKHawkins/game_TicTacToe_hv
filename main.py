@@ -119,5 +119,7 @@ def board_full(board):
 
 
 def game_tie(board):
-    return board_full(board)
+    if not game_won(board) and board_full(board):
+        return True
+    return False
 
