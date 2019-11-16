@@ -53,7 +53,8 @@ def player_move(board, player):
     valid_position = False
     position = ""
     while not valid_position:
-        position = input(f"Where do you want to place your '{player}'?:  ").strip()
+        position = input(
+            f"Place your '{player}'?:  ").strip()
         while not position in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
             position = input("Choose a number between 1 and 9:  ").strip()
         position = int(position) - 1
@@ -78,6 +79,7 @@ def space_free(board, space):
     if board[space] != "X" != "O":
         return True
     return False
+
 
 def random_computer_move(possible_moves):
     return random.choice(possible_moves)
@@ -133,5 +135,6 @@ def game_tied(board):
     if not game_won(board) and board_full(board):
         return True
     return False
+
 
 play_game()
