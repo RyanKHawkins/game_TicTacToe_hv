@@ -27,7 +27,9 @@ def display_board(board):
 
 def play_game():
     board = create_board()
-    num_players = input("How many players? (0 - 2):  ")
+    num_players = ""
+    while num_players not in ["0", "1", "2"]:
+        num_players = input("How many players? (0 - 2):  ").strip()
 
     current_player = "X"
     waiting_player = "O"
