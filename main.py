@@ -26,6 +26,7 @@ def display_board(board):
 
 
 def play_game():
+    board = create_board()
     num_players = input("How many players? (0 - 2):  ")
 
     current_player = "X"
@@ -37,8 +38,18 @@ def play_game():
     current_player, waiting_player = waiting_player, current_player
 
 
-def player_move(player):
-    pass
+def player_move(board, player):
+    valid_position = False
+    position = ""
+    while not valid_position and not position in ["1", "2", "3"]:
+        position = input("Choose a spot (1-9):  ")
+        position = int(position) - 1
+        if space_free(board, position):
+            board[position] = player
+            valid_position = True
+        else:
+            position = input("That spot is taken. Choose another (1-9):  ")
+            valid_position = False
 
 
 def computer_move(board):
@@ -49,9 +60,11 @@ def computer_move(board):
     return possible_moves
 
 
-def space_free(space):
-    return space not in ["X", "O"]
-
+def space_free(board, space):
+    #return space not in ["X", "O"]
+    if space != "X" != "O":
+        return True
+    return False
 
 def random_computer_move(possible_moves):
     return random.choice(possible_moves)
@@ -106,11 +119,3 @@ def board_full(board):
 def game_tie(board):
     return board_full(board)
 
-
-# temporary testers
-board = create_board()
-display_board(board)
-if board_full(board):
-    print("Board is full.")
-if not board_full(board):
-    print("Board is not full.")
