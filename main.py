@@ -3,6 +3,7 @@
 
 import random
 import os
+import time
 
 
 def clear():
@@ -81,8 +82,12 @@ def vertical_win(board, player):
     return False
 
 
-def diagonal_win():
-    pass
+def diagonal_win(board, player):
+    if board[0] == board[4] == board[8] == player:
+        return True
+    if board[2] == board[4] == board[6] == player:
+        return True
+    return False
 
 
 def board_full(board):
