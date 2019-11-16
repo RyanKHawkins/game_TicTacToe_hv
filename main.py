@@ -32,10 +32,21 @@ def play_game():
     current_player = "X"
     waiting_player = "O"
 
-    if game_won(board):
-        pass
+    clear()
+    display_board(board)
 
-    current_player, waiting_player = waiting_player, current_player
+    while not game_won(board) and not game_tied(board):
+
+        player_move(board, current_player)
+        display_board(board)
+        if game_won(board):
+            winner = current_player
+            print(f"{winner} won!")
+
+        if game_tied(board):
+            print("Game tied.")
+
+        current_player, waiting_player = waiting_player, current_player
 
 
 def player_move(board, player):
@@ -118,8 +129,9 @@ def board_full(board):
     return True
 
 
-def game_tie(board):
+def game_tied(board):
     if not game_won(board) and board_full(board):
         return True
     return False
 
+play_game()
