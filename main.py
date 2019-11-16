@@ -62,7 +62,7 @@ def player_move(board, player):
             board[position] = player
             valid_position = True
         else:
-            print("That spot is taken.")
+            print("That spot is taken.\n")
             valid_position = False
 
 
@@ -76,7 +76,7 @@ def computer_move(board):
 
 def space_free(board, space):
     #return space not in ["X", "O"]
-    if board[space] != "X" != "O":
+    if board[space] != "X" and board[space] != "O":
         return True
     return False
 
