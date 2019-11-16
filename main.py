@@ -62,7 +62,7 @@ def computer_move(board):
 
 def space_free(board, space):
     #return space not in ["X", "O"]
-    if space != "X" != "O":
+    if board[space] != "X" != "O":
         return True
     return False
 
