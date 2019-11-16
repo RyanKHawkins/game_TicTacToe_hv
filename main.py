@@ -54,7 +54,7 @@ def player_move(board, player):
     position = ""
     while not valid_position:
         position = input(
-            f"Place your '{player}'?:  ").strip()
+            f"Place your '{player}':  ").strip()
         while not position in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
             position = input("Choose a number between 1 and 9:  ").strip()
         position = int(position) - 1
