@@ -72,7 +72,13 @@ def game_won(board, player):
 
 
 def horizontal_win(board, player):
-    pass
+    if board[0] == board[1] == board[2] == player:
+        return True
+    if board[3] == board[4] == board[5] == player:
+        return True
+    if board[6] == board[7] == board[8] == player:
+        return True
+    return False
 
 
 def vertical_win(board, player):
