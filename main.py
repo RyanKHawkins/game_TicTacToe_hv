@@ -76,37 +76,37 @@ def smart_computer_move():
     pass
 
 
-def game_won(board, player):
-    if horizontal_win(board, player):
+def game_won(board):
+    if horizontal_win(board):
         return True
-    if vertical_win(board, player):
+    if vertical_win(board):
         return True
-    if diagonal_win(board, player):
-        return True
-    return False
-
-
-def horizontal_win(board, player):
-    if board[0] == board[1] == board[2] == player:
-        return True
-    if board[3] == board[4] == board[5] == player:
-        return True
-    if board[6] == board[7] == board[8] == player:
+    if diagonal_win(board):
         return True
     return False
 
 
-def vertical_win(board, player):
+def horizontal_win(board):
+    if board[0] == board[1] == board[2]:
+        return True
+    if board[3] == board[4] == board[5]:
+        return True
+    if board[6] == board[7] == board[8]:
+        return True
+    return False
+
+
+def vertical_win(board):
     for column in range(3):
-        if board[column] == board[column + 3] == board[column + 6] == player:
+        if board[column] == board[column + 3] == board[column + 6]:
             return True
     return False
 
 
-def diagonal_win(board, player):
-    if board[0] == board[4] == board[8] == player:
+def diagonal_win(board):
+    if board[0] == board[4] == board[8]:
         return True
-    if board[2] == board[4] == board[6] == player:
+    if board[2] == board[4] == board[6]:
         return True
     return False
 
