@@ -41,14 +41,16 @@ def play_game():
 def player_move(board, player):
     valid_position = False
     position = ""
-    while not valid_position and not position in ["1", "2", "3"]:
-        position = input("Choose a spot (1-9):  ")
+    while not valid_position:
+        position = input(f"Where do you want to place your '{player}'?:  ").strip()
+        while not position in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            position = input("Choose a number between 1 and 9:  ").strip()
         position = int(position) - 1
         if space_free(board, position):
             board[position] = player
             valid_position = True
         else:
-            position = input("That spot is taken. Choose another (1-9):  ")
+            print("That spot is taken.")
             valid_position = False
 
 
