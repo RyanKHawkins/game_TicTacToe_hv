@@ -69,6 +69,7 @@ def player_move(board, player):
 
 
 def computer_move(board):
+    time.sleep(.5)
     possible_moves = []
     for space in board:
         if space_free(space):
