@@ -138,5 +138,6 @@ def game_tied(board):
         return True
     return False
 
-
-play_game()
+# Main driver
+if __name__ == '__main__':
+    play_game()
